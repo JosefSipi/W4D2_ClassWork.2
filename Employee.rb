@@ -1,3 +1,4 @@
+
 class Employee
     
     attr_accessor :name, :title, :salary, :boss
@@ -16,16 +17,34 @@ class Employee
 
 end
 
+# class Manager < Employee
 
-#jess = Manager.new("jess", "Bosslady", 100000)
+#     attr_accessor :employees
 
-hocus = Employee.new("Hocus", "cat", 1000, jess)
-pocus = Employee.new("Pocus", "cat2", 1000, jess)
+#     def initialize(name, title, salary, boss = nil)
+
+#         super
+#         @employees = []
+#     end
+
+#     def add_employee(employee_ins)    # instance of Employee
+#         self.employees << employee_ins
+#     end
+    
+
+
+
+# end
+
+# jess = Manager.new("jess", "Bosslady", 100000)
+
+# hocus = Employee.new("Hocus", "cat", 1000, jess)
+# pocus = Employee.new("Pocus", "cat2", 1000, jess)
 
 # jess.add_employee(hocus)
 # jess.add_employee(pocus)
 
-p jess
-p hocus
-p pocus
+# p jess.employees
+# p hocus
+# p pocus
 
