@@ -23,10 +23,27 @@ class Board
     end
 
     def move_piece(start_pos, end_pos)
-        
 
+        play_piece = board[start_pos]
+        end_piece = board[end_pos] 
+
+        if empty?(start_pos)
+            raise "No piece at this location"
+        end
+
+        begin
+            if  empty?(end_pos)
+                board[end_pos] = play_piece
+                board[start_pos] = NullPiece.new
+            end
+        rescue 
+            raise "can't move to this position"
+        end
     end
 
+    def empty?(position)
+        board[position].is_a?(NullPiece)
+    end
 
     def place_pieces
         board.each_with_index do |row, row_idx|

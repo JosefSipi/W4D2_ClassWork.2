@@ -1,13 +1,12 @@
-class NullPiece < Piece
-
-    attr_accessor :value
+class NullPiece
 
     def initialize
-        @value = "null_piece"
+        @test = "null_piece"
     end
 
-    def inspect
-        @value
-    end 
 
+    def inspect
+        @test
+    end
+    
 end
