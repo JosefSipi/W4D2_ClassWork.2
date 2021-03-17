@@ -1,6 +1,6 @@
 module Stepable
 
-    def moves(position)
+    def moves
         moves = []
 
         row = position[0]
