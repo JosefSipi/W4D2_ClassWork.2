@@ -23,14 +23,14 @@ class Board
     end
 
     def [](pos_arr)  # [0,5]
-        row = pos_arr[0].to_i
-        column = pos_arr[1].to_i
+        row = pos_arr[0]
+        column = pos_arr[1]
         board[row][column]
     end
 
     def []=(pos_arr, piece)
-        row = pos_arr[0].to_i
-        column = pos_arr[1].to_i
+        row = pos_arr[0]
+        column = pos_arr[1]
         board[row][column] = piece
     end
 
