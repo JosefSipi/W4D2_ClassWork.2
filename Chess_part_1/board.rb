@@ -16,7 +16,7 @@ class Board
             row.each_with_index do |spot, col_idx|
                 if (0..1).include?(row_idx) || (6..7).include?(row_idx)
                     pos = [row_idx, col_idx]
-                    self[pos] = Piece.new #(pos)
+                    self[pos] = Piece.new(:white, self, pos) #(pos)
                 end
             end
         end
@@ -39,7 +39,7 @@ class Board
         play_piece = self[start_pos]
 
         raise "No piece at this location" if empty?(start_pos) 
-        raise "location not on board" if out_of_bound?(start_pos) || out_of_bound?(end_pos)
+        raise "location not on board" if !in_bound?(start_pos) || !in_bound?(end_pos)
         self[start_pos] = nil   # NullPiece.new
         self[end_pos] = play_piece
 
@@ -49,8 +49,8 @@ class Board
         self[position].nil?    # is_a?(NullPiece)
     end
 
-    def out_of_bound?(position)
-        position[0] > 7 || position[1] > 7
+    def in_bound?(position)
+        (0..7).include?(position[0]) || (0..7).include?(position[1])
     end
 end
 

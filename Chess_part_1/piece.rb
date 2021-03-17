@@ -1,6 +1,6 @@
 class Piece
 
-    attr_accessor :starting_pos, :position, :board
+    attr_accessor :starting_pos, :position, :board, :color
 
     def initialize(color, board, position)
         @color = color
@@ -18,8 +18,9 @@ class Piece
     end
 
     def empty?
-        
+
     end
+
 
 
 
