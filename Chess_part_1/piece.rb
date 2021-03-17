@@ -1,13 +1,24 @@
 class Piece
 
-    # attr_accessor :starting_pos
+    attr_accessor :starting_pos
 
-    # def initialize  (starting_pos)
-    #     @starting_pos = starting_pos
-    # end
+    def initialize(color, board, position)
+        @color = color
+        @position = position
+        @board = board
+
+    end
 
     def inspect
         "Piece"
+    end
+
+    def to_s
+
+    end
+
+    def empty?
+        
     end
 
 

@@ -8,7 +8,7 @@ class Board
 
     def initialize
         @board = Array.new(8) { Array.new(8) }
-        .place_pieces
+        self.place_pieces
     end
 
     def place_pieces
@@ -36,58 +36,21 @@ class Board
 
     def move_piece(start_pos, end_pos)
 
-        play_piece = board[start_pos]
+        play_piece = self[start_pos]
 
         raise "No piece at this location" if empty?(start_pos) 
-        
-        board[start_pos] = nil   # NullPiece.new
-        board[end_piece] = play_piece
+        raise "location not on board" if out_of_bound?(start_pos) || out_of_bound?(end_pos)
+        self[start_pos] = nil   # NullPiece.new
+        self[end_pos] = play_piece
 
     end
 
     def empty?(position)
-        board[position].nil?    # is_a?(NullPiece)
+        self[position].nil?    # is_a?(NullPiece)
     end
 
-
-
-
-
+    def out_of_bound?(position)
+        position[0] > 7 || position[1] > 7
+    end
 end
 
-
-board = Board.new
-p board
-
-
-
-
-
-        # FIRST ATTEMPT: OVER COMPLICATED
-        # begin
-        #     board[start_pos] = NullPiece.new
-        #     board[end_piece] = play_piece
-        # rescue                           #Potential errors: not_on_board, no_posistion, no_piece_to_move 
-        #     raise "Not a valid move"
-        # end
-
-
-        # begin
-        #    raise "No piece at this location" if empty?(start_pos)   
-        # rescue 
-        #     puts "Please choose a valid piece"
-        #     retry
-        # end
-
-
-        # begin
-        #     #
-        #     #rescue for no piece @ start and cant move end??
-        # rescue 
-        #     raise "can't move to this position"
-        # end
-
-        # if  empty?(end_pos)
-        #     board[end_pos] = play_piece
-        #     board[start_pos] = NullPiece.new
-        # end
