@@ -1,13 +1,13 @@
 class Piece
 
-    attr_accessor :starting_pos
+    # attr_accessor :starting_pos
 
-    def initialize  (starting_pos)
-        @starting_pos = starting_pos
-    end
+    # def initialize  (starting_pos)
+    #     @starting_pos = starting_pos
+    # end
 
     def inspect
-        "Piece: #{starting_pos}"
+        "Piece"
     end
 
 
